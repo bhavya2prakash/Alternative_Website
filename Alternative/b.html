@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="CSS/lightbox.min.css">
+  <script type="text/javascript" src="JS/lightbox-plus-jquery.min.js">
+  </script>
+<link href='https://fonts.googleapis.com/css?family=Bangers' rel='stylesheet'>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Bangers';font-size: 22px;
+  padding: 10px;
+   background-image: url("83.jpg") ;
+ 
+  
+}
+.bg-text {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+ letter-spacing: 4px;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 60%;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: black;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: pink;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: white;
+  ;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 75%;
+ background-color:black;
+ }
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  background-color:black;
+  padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+  width: 100%;
+  padding: 10px;
+}
+
+/* Add a card effect for articles */
+.card {
+   background-color:  #f5fffa; 
+
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: black;
+  margin-top: 20px;
+  color:white;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+
+}
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}/*lightbox*/
+.gallery img{
+ width:280px;
+padding:5px;
+filter:grayscale(0%);
+transition:1s;
+border: 5px;
+border-color: white;
+}
+.gallery img:hover{
+filter:grayscale(100%);
+transform:scale(1.1);
+}
+</style>
+</head>
+<body>
+<div class="topnav">
+   <a href="#">HOME</a> 
+  <a href="#">GALLERY</a>
+  <a href="#">ABOUT US</a>
+  <a href="#">CONTACT US</a>
+ 
+</div>
+
+<!-- Image Header -->
+<div>
+  <img src="in.jpg" alt="boat" style="filter: blur(2px);width:100%;min-height:350px;max-height:450px;">
+  <div class="bg-text">
+  <h1 style="font-size:50px; font-family: 'Maiandra GD';">ALTERNATIVE.com</h1>
+  <p>STOP USING PLASTIC FIND YOUR ALTERNATIVES HERE!</p>
+</div>
+</div>
+
+
+
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <h2>OUR WORK</h2>
+      
+    <div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 7</div>
+  <img src="p.jpg" style="width:100%;height:300px;">
+  <div class="text">Caption Text</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 7</div>
+  <img src="pi.jpg" style="width:100%;height:300px;">
+  <div class="text">Caption Two</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 7</div>
+  <img src="py.jpg" style="width:100%;height:300px;">
+  <div class="text">Caption Three</div>
+</div>
+<div class="mySlides fade">
+  <div class="numbertext">4 / 7</div>
+  <img src="a.jpg" style="width:100%;height:300px;">
+  <div class="text">Caption Three</div>
+</div>
+<div class="mySlides fade">
+  <div class="numbertext">5 / 7</div>
+  <img src="b.jpg" style="width:100%;height:300px;">
+  <div class="text">Caption Three</div>
+</div>
+<div class="mySlides fade">
+  <div class="numbertext">6 / 7</div>
+  <img src="c.jpg" style="width:100%;height:300px;">
+  <div class="text">Caption Three</div>
+</div>
+<div class="mySlides fade">
+  <div class="numbertext">7 / 7</div>
+  <img src="d.jpg" style="width:100%;height:300px;">
+  <div class="text">Caption Three</div>
+</div>
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+  <span class="dot" onclick="currentSlide(4)"></span> 
+  <span class="dot" onclick="currentSlide(5)"></span> 
+  <span class="dot" onclick="currentSlide(6)"></span> 
+  <span class="dot" onclick="currentSlide(7)"></span> 
+</div>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+
+      
+      <p>Plastic bags are not biodegradable. They fly off trash piles, garbage trucks, and landfills, and then clog stormwater infrastructure, float down waterways, and spoil the landscape. If all goes well, they end up in proper landfills where they may take 1,000 years or more to break down into ever smaller particles that continue to pollute the soil and water.</p>
+    </div>
+    <div class="card">
+      <h2>best offers</h2>
+      
+      <div class="fakeimg" style="height:300px;"><div class="gallery">
+	 
+<a href="polybag67.jpg" data-lightbox="mygallery"><img src="polybag67.jpg"></a>
+<a href="j3.jpg" data-lightbox="mygallery"><img src="j3.jpg"></a>
+<a href="j4.jpg" data-lightbox="mygallery"><img src="j4.jpg"></a></div>
+      <p>latest in the marketfhddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p></div>
+  </div>
+<div class="rightcolumn">
+    <div class="card">
+     <fieldset>
+    <legend>LOGIN</legend>
+    Name: <input type="text"><br><br>
+    Email: <input type="text"><br><br>
+    <button>LOGIN</button>
+  </fieldset></div>
+    <div class="card">
+      <h3>WE PROMISE</h3>
+      <div class="fakeimg"><img src="j1.jpg"style="height:150px;"></div>
+      <div class="fakeimg"><img src="j2.jpg"style="height:150px;"></div>
+     
+    </div>
+    <div class="card">
+      <h3>YOU GIVE WE RECYCLE</h3>
+      <p>Plastic recycling refers to the process of recovering waste or scrap plastic and reprocessing the materials into functional and useful products. This activity is known as the plastic recycling process</p>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <h2>FOLLOW US</h2>
+  <img src="Facebook_icon.jpg" 
+            style="width: 67px; height: 58px;" />&nbsp<img src="instagram.jpg" style="width: 67px; height: 58px;" />&nbsp<img src="whatsapp.jpg" style="width: 67px; height: 58px;" >&nbsp<img src="twitter.jpg"style="width: 67px; height: 58px;"  />
+</div>
+
+</body>
+</html>
+background-image:url("yo.jpg");
+ background-repeat: no-repeat;
+background-size:  100% 100%; 

@@ -1,0 +1,28 @@
+body{
+font-family: sans-serif;
+background-image:url('scene1.jpg');
+}
+h1{
+  text-align: center;
+  color: black;
+  font-size:50px;
+  text-shadow: 3px 3px 3px red;
+  text-decoration:underline red;
+  margin: 50px 0 20px;
+  }
+.gallery{
+margin:10px 50px;
+}
+.gallery img{
+ width:280px;
+padding:5px;
+filter:grayscale(0%);
+transition:1s;
+border: 5px;
+border-color: white;
+}
+.gallery img:hover{
+filter:grayscale(100%);
+transform:scale(1.1);
+}
+

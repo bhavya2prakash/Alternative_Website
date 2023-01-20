@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html><head><link rel="stylesheet" type="text/css" href="CSS/lightbox.min.css">
+  <script type="text/javascript" src="JS/lightbox-plus-jquery.min.js">
+  </script><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+font-family: "Gabriola";font-size: 22px;
+  padding: 10px;
+   background-image: url("83.jpg") ;
+ 
+  
+}
+.bg-text {
+
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+ letter-spacing: 4px;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 60%;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: black;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: pink;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: white;
+  ;
+}/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+/*lightbox*/
+.gallery img{
+ width:21%;height:21%;
+padding:5px;
+filter:grayscale(0%);
+transition:1s;
+border: 5px;
+border-color: white;
+}
+.gallery img:hover{
+filter:grayscale(100%);
+transform:scale(1.1);
+}
+/* Add a card effect for articles */
+.card {
+   background-image: url("u.jpg");
+ 
+  
+  padding: 20px;
+  margin-top: 20px;
+}
+
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the counter cards */
+.crd {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+/* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+
+}
+.block {
+  display: block;
+  width: 100%;
+  height:200px
+  border: none;
+  background-color: #4CAF50;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+}
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: black;
+  margin-top: 20px;
+  color:white;
+}
+
+</style>
+
+</head>
+<body>
+<div class="topnav">
+   <a href="signup.aspx">LOGIN</a> 
+  <a href="anny/gallery.html">GALLERY</a>
+  <a href="wd/about.html">ABOUT US</a>
+  <a href="wd/2.html">CONTACT US</a>
+ 
+</div>
+
+<!-- Image Header -->
+<div>
+  <img src="in.jpg" alt="boat" style="filter: blur(2px);width:100%;min-height:350px;max-height:450px;">
+  <div class="bg-text">
+  <h1 style="font-size:60px">ALTERNATIVE.com</h1>
+  <p>STOP USING PLASTIC FIND YOUR ALTERNATIVES HERE!</p>
+</div>
+</div>
+<center><div class="card">
+      <h2 style="background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+ letter-spacing: 4px;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 60%;
+  padding: 20px;
+  text-align: center;">OUR WORK</h2><br><br><br><br>
+ <div class="slideshow-container">
+
+<div class="mySlides fade" style="display: none;">
+  <div class="numbertext">1 / 7</div>
+  <img src="pi.jpg" style="width:100%;height:400px;">
+  
+</div>
+
+<div class="mySlides fade" style="display: block;">
+  <div class="numbertext">2 / 7</div>
+  <img src="k.jpg" style="width:100%;height:400px;">
+  
+</div>
+
+<div class="mySlides fade" style="display: none;">
+  <div class="numbertext">3 / 7</div>
+  <img src="py.jpg" style="width:100%;height:400px;">
+ 
+</div>
+<div class="mySlides fade" style="display: none;">
+  <div class="numbertext">4 / 7</div>
+  <img src="a.jpg" style="width:100%;height:400px;">
+  
+</div>
+<div class="mySlides fade" style="display: none;">
+  <div class="numbertext">5 / 7</div>
+  <img src="b.jpg" style="width:100%;height:400px;">
+ 
+</div>
+<div class="mySlides fade" style="display: none;">
+  <div class="numbertext">6 / 7</div>
+  <img src="c.jpg" style="width:100%;height:400px;">
+ 
+</div>
+<div class="mySlides fade" style="display: none;">
+  <div class="numbertext">7 / 7</div>
+  <img src="d.jpg" style="width:100%;height:400px;">
+ 
+</div>
+<a class="prev" onclick="plusSlides(-1)" style="
+    left: 0;
+">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot active" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+  <span class="dot" onclick="currentSlide(4)"></span> 
+  <span class="dot" onclick="currentSlide(5)"></span> 
+  <span class="dot" onclick="currentSlide(6)"></span> 
+  <span class="dot" onclick="currentSlide(7)"></span> 
+</div>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script><p>Plastic bags are not biodegradable. They fly off trash piles, garbage trucks, and landfills, and then clog stormwater infrastructure, float down waterways, and spoil the landscape. If all goes well, they end up in proper landfills where they may take 1,000 years or more to break down into ever smaller particles that continue to pollute the soil and water.</p></div>
+<div class="card">
+<br><h2 style="background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+ letter-spacing: 4px;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 60%;
+  padding: 20px;
+  text-align: center;">LIMITED BEST OFFERS!!!!<br>BAGS UNDER RS 300.00</h2> 
+<div style="height:700px;"><div class="gallery"><br><br><br>
+
+<a href="my proj/polybag65.jpg" data-lightbox="mygallery"><img src="my project/polybag65.jpg"></a>
+<a href="anny/my project/polybag66.jpg" data-lightbox="mygallery"><img src="anny/my project/polybag66.jpg"></a>
+<a href="my project/polybag72.jpg" data-lightbox="mygallery"><img src="my project/polybag72.jpg"></a>
+<a href="my project/polybag4.jpg" data-lightbox="mygallery"><img src="my project/polybag4.jpg"></a>
+<a href="my project/polybag5.jpg" data-lightbox="mygallery"><img src="my project/polybag5.jpg"></a>
+<a href="my project/polybag11.jpg" data-lightbox="mygallery"><img src="my project/polybag11.jpg"></a>
+<a href="my project/polybag36.jpg" data-lightbox="mygallery"><img src="my project/polybag36.jpg"></a>
+<a href="my project/polybag33.jpg" data-lightbox="mygallery"><img src="my project/polybag33.jpg"></a>
+<br><button type="button" class="block">SIGN IN TO AVAIL OFFERS!!!</button></div></div></div><br><br>
+
+<div style="height:300px;"><div class="row">
+  <div class="column">
+    <div class="crd"><img src="f.jpg" style="width:100%;height:275px;"></div>
+  </div>
+  <div class="column">
+    <div class="crd"><img src="t.jpg" style="width:100%;height:275px;"></div>
+  </div>
+  <div class="column">
+    <div class="crd"><img src="be.jpg" style="width:100%;height:275px;"></div>
+  </div>
+  <div class="column">
+    <div class="crd"><img src="e.jpg" style="width:100%;height:275px;"></div>
+  </div>
+</div></div><br><div class="card">
+ <div style="height:700px;"><br><br><h2 style="background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+ letter-spacing: 4px;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 60%;
+  padding: 20px;
+  text-align: center;">HELP US TO RECYCLE TO BRING THE BALANCE IN NATURE!!</h2><br><br><br>
+ <center>
+    <video width="700" controls>
+         <source src="India_s_Recent_Plastics_Ban_Sees_Little_Success.mp4" type="video/mp4">
+         <source src="India_s_Recent_Plastics_Ban_Sees_Little_Success.mp4.ogg" type="video/ogg">
+    </video>
+    </center></div></div>
+
+<div class="footer">
+  <h2>FOLLOW US</h2>
+
+  <img src="Facebook_icon.jpg" style="width: 67px; height: 58px;">&nbsp;<img src="instagram.jpg" style="width: 67px; height: 58px;">&nbsp;<img src="whatsapp.jpg" style="width: 67px; height: 58px;">&nbsp;<img src="twitter.jpg" style="width: 67px; height: 58px;">
+</div>
+
+
+</body></html>
